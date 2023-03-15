@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
     <title>The Last of Us - A Série</title>
 </head>
 
@@ -15,7 +18,7 @@
     <main>
         <section class="carousel">
             <figure>
-                <img src="./src/img/tlou-1.jpg" alt="Ellie e Joel abraçados" class="image">
+                <img src="./src/img/tlou-1.jpg" alt="Ellie e Joel abraçados" class="image active">
             </figure>
             <figure>
                 <img src="./src/img/tlou-2.jpg" alt="Personagens de The Last of Us" class="image">
@@ -36,17 +39,17 @@
         <section class="content">
             <section class="informations">
                 <figure>
-                    <img src="./src/img/logo.png" alt="Logo The Last of Us">
+                    <img src="./src/img/logo.png" alt="Logo The Last of Us" class="logo">
                 </figure>
-                <p>
+                <p class="description">
                     The Last of Us é uma série distópica da HBO baseada na franquia de jogos de videogame de mesmo nome
                     criada por Neil Druckmann. O drama narra um futuro pandêmico que foi devastador para humanidade,
                     deixando os seres humanos à beira da extinção.
                 </p>
             </section>
 
-            <section class="carousel-button">
-                <button class="button"></button>
+            <section class="carousel-buttons">
+                <button class="button selected"></button>
                 <button class="button"></button>
                 <button class="button"></button>
                 <button class="button"></button>
@@ -54,20 +57,22 @@
                 <button class="button"></button>
             </section>
         </section>
-        <aside class="lateral-menu">
-            <ul>
-                <li>
-                    <a href="https://github.com/ViniciusNeivas" target="_blank" class="icons">
-                        <img src="./src/img/github.svg" alt="Icone do GitHub">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/viniciusneivas/" target="_blank" class="icons">
-                        <img src="./src/img/linkedin-in.svg" alt="Icone do LinkedIn">
-                    </a>
-                </li>
-            </ul>
-        </aside>
+        <section>
+            <aside class="lateral-menu">
+                <ul>
+                    <li>
+                        <a href="https://github.com/ViniciusNeivas" target="_blank">
+                            <img src="./src/img/github.svg" alt="Icone do GitHub" class="icons">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/viniciusneivas/" target="_blank">
+                            <img src="./src/img/linkedin-in.svg" alt="Icone do LinkedIn" class="icons">
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+        </section>
     </main>
 </body>
 
