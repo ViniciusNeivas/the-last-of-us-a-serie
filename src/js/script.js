@@ -1,25 +1,39 @@
-/* 
-	OBJETIVO - quando clicarmos no botão temos que mostrar a imagem de fundo correspondente
+const carouselButtons = document.querySelectorAll(".button");
+const images = document.querySelectorAll(".image");
 
-    - passo 1 - dar um jeito de pegar o elemento HTML dos botões
+let selectedButton = document.querySelector(".selected");
+let activeImage = document.querySelector(".active");
 
-	- passo 2 - dar um jeito de identificar o clique do usuário no botão
+carouselButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    disableSelectedButton();
 
-	- passo 3 - desmarcar o botão selecionado anterior
+    activateSelectedButton(button);
 
-	- passo 4 - marcar o botão clicado como se estivesse selecionada
+    hideActiveImage();
 
-	- passo 5 - esconder a imagem de fundo anterior
+    showBackgroundImage(index);
+  });
+});
 
-	- passo 6 - fazer aparecer a imagem de fundo correspondente ao botão clicado
-*/
+function showBackgroundImage(index) {
+  images[index].classList.add("active");
+  activeImage = images[index];
+}
 
-const carouselButtons = document.querySelectorAll('.button');
+function activateSelectedButton(button) {
+  button.classList.add("selected");
+  selectedButton = button;
+}
 
-carouselButtons.forEach((button) => {
-   button.addEventListener('click', (e) => {
-    const selectedButton = document.querySelector('.selected');
-    selectedButton.classList.remove('selected');
-   })
-})
+function hideActiveImage() {
+  if (activeImage) {
+    activeImage.classList.remove("active");
+  }
+}
 
+function disableSelectedButton() {
+  if (selectedButton) {
+    selectedButton.classList.remove("selected");
+  }
+}
