@@ -17,13 +17,9 @@ showBackgroundImage(0);
 carouselButtons.forEach((button, index) => {
   button.addEventListener("click", () => {
     disableSelectedButton();
-    
     activateSelectedButton(button);
-    
-    showBackgroundImage(index);
-   
     hideActiveImage();
-    
+    showBackgroundImage(index);
   });
 });
 
