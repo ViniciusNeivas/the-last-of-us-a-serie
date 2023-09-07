@@ -1,5 +1,7 @@
 const carouselButtons = document.querySelectorAll(".button");
 const images = document.querySelectorAll(".image");
+const description = document.querySelector(".description");
+const imgs = document.getElementById("img")
 const imagesText = [
   " The Last of Us é uma série distópica da HBO baseada na franquia de jogos de videogame de mesmo nome criada por Neil Druckmann. O drama narra um futuro pandêmico que foi devastador para humanidade, deixando os seres humanos à beira da extinção",
   "A história segue Joel, um sobrevivente que é contratado para escoltar Ellie, uma adolescente imune à doença, por todo o país em busca de uma cura.",
@@ -11,35 +13,33 @@ const imagesText = [
 
 let activeImage = document.querySelector(".active");
 let selectedButton = document.querySelector(".selected");
+let currentIndex = 0;
 
 showBackgroundImage(0);
 
 carouselButtons.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    disableSelectedButton();
-    activateSelectedButton(button);
-    hideActiveImage();
-    showBackgroundImage(index);
-  });
+    button.addEventListener("click", () => {
+        showBackgroundImage(index);
+    });
 });
 
 function showBackgroundImage(index) {
-  images[index].classList.add("active");
-  activeImage = images[index];
-  const description = document.querySelector(".description");
-  description.textContent = imagesText[index];
+    currentIndex = index;
+    images.forEach((image,  i) => {
+        if (i === index) {
+            image.classList.add("active");
+            carouselButtons[i].classList.add("selected");
+        } else {
+            image.classList.remove("active");
+            carouselButtons[i].classList.remove("selected");
+        }
+    });
+    description.textContent = imagesText[index];
 }
 
-function activateSelectedButton(button) {
-  button.classList.add("selected");
-  selectedButton = button;
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showBackgroundImage(currentIndex);
 }
 
-function hideActiveImage() {
-  activeImage ? activeImage.classList.remove("active"): null;
-}
-
-function disableSelectedButton() {
-  selectedButton ? selectedButton.classList.remove("selected") : null;
-  }
-
+setInterval(nextImage, 18000);

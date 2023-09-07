@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,12 +20,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <script src="./src/js/script.js" defer></script>
 </head>
-
 <body>
     <main>
-        <section class="carousel">
+        <section class="carousel" id="img">
             <figure>
                 <img src="./src/img/tlou-1.jpg" alt="Ellie e Joel abraçados" class="image active">
             </figure>
@@ -47,8 +44,8 @@
             </figure>
         </section>
         <section class="content">
-            <section class="informations">
-                <figure>
+            <section class="informations" >
+                <figure >
                     <img src="./src/img/logo.png" alt="Logo The Last of Us" class="logo">
                 </figure>
                 <p class="description">
@@ -57,17 +54,15 @@
                     deixando os seres humanos à beira da extinção
                 </p>
             </section>
-
             <section class="carousel-buttons">
-                <button class="button selected"></button>
-                <button class="button"></button>
-                <button class="button"></button>
-                <button class="button"></button>
-                <button class="button"></button>
-                <button class="button"></button>
+                <button class="button selected" data-index="0"></button>
+                <button class="button" data-index="1"></button>
+                <button class="button" data-index="2"></button>
+                <button class="button" data-index="3"></button>
+                <button class="button" data-index="4"></button>
+                <button class="button" data-index="5"></button>
             </section>
         </section>
-
         <aside class="lateral-menu">
             <ul>
                 <li>
@@ -82,8 +77,7 @@
                 </li>
             </ul>
         </aside>
-
     </main>
+    <script src="./src/js/script.js" defer></script>
 </body>
-
 </html>
